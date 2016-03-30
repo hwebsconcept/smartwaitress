@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title> Smart Waitress </title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body>
+<div class="main-content container" id="main">
+    <div class="row" align="center">
+    	<div class="categories">
+    	<img src="img/loading-transparent.gif" style="max-width:100px;"/>
+        </div>
+    </div>
+</div>
+
+
+<!-- div#main -->
+<div class="main-navbar main-navbar-fixed-top" id="main-navbar">
+    <div class="main-navbar-content">
+    	<h3 class="pull-right "><b>Categories</b></h3>
+        <div class="icon left" id="toggle-sidebar">
+            <h3><i class="glyphicon glyphicon-align-justify pull-right"></i></h3>
+        </div>
+    </div>
+</div>
+<!-- div#main-navbar -->
+<div class="main-sidebar main-sidebar-left" id="main-sidebar">
+	<div>
+        <img src="img/feel.png" class="img-responsive" />
+    </div>
+    <div class="main-sidebar-wrapper" id="main-sidebar-wrapper" style="padding:0;margin:0;">
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html"><i class="glyphicon glyphicon-cutlery pull-right"></i> FOOD MENU</a></li>
+                <li><a href="cart.html"><i class="glyphicon glyphicon-shopping-cart pull-right"></i> ORDER LIST</a></li>
+                <li><a href="pending.html"><i class="glyphicon glyphicon-glass pull-right"></i> PENDING</a></li>
+                <li><a href="feedback.html"><i class="glyphicon glyphicon-inbox pull-right"></i> FEEDBACK</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jqueryui.js"></script>
+<script src="js/jquery.simple-sidebar.js"></script>
+<script src="js/bootstrap.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $('#main-sidebar').simpleSidebar({
+            wrapper: '#main',
+            opener: '#toggle-sidebar',
+            animation: {
+                easing: 'easeOutQuint'
+            },
+            sidebar: {
+                align: 'left',
+                closingLinks: '.close-sb'
+            },
+            sbWrapper: {
+                display: false
+            }
+        });
+    });
+</script>
+
+<script>
+
+var url_location ="http://truparsecreative.com/smartwaitress/function/";
+
+$.post( url_location+"categories.php", function( data ) {
+  $( ".categories" ).html( data );
+});
+</script>
+
+</body>
+</html>

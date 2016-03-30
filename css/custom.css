@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face { font-family: Roboto; src: url(../fonts/Roboto/Roboto-Regular.ttf) }
+body 
+{
+	font-family:Roboto;
+	background-image: url("../img/bg.jpg");
+}
+
+h1,h2,h3
+{
+	margin:0px;
+	padding:0px;
+	margin-top:3px;
+	font-weight:300;
+}
+
+.name-alignment
+{
+	position:absolute; 
+	bottom:5px; 
+	right:20px; 
+	color:#FFF; 
+	text-shadow: 1px 2px #333;
+}
+
+nav.navigation ul >li
+{
+	padding:10px;
+	border-bottom:solid 1px #FFB300;
+}
+nav.navigation ul >li > a
+{
+	color:#FFFFFF;
+}
+nav.navigation ul >li > a:hover
+{
+	color:#000000;
+	text-decoration:none;
+}
+
+
+
+.rating span { position:relative; }
+.rating span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.rating span label {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    color:#FFF;
+    background:#ccc;
+    font-size:30px;
+    margin-right:2px;
+    line-height:30px;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+    background:#F90;
+    color:#FFF;
+}
+
+

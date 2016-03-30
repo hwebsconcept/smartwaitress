@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title> Smart Waitress </title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+
+<body>
+<div class="main-content container" id="main">
+    <div class="row">
+        <header class="col-md-12">
+            <h1>Feedback</h1>
+            <article> Your feed matters to us. Kindly feel the feedback form correctly</article>
+            <br/>
+        </header>
+    </div>
+    <div class="row">
+    	<form id="form" name="form" method="post" action="" enctype="multipart/form-data">
+        	
+                    <div class="col-md-6 col-sm-6  col-xs-6">
+                    <label>Full Name (Optional)</label>
+                    <input type="text" name="name" class="form-control" />
+                    </div>
+                    <div class="col-md-6 col-sm-6  col-xs-6">
+                    <label>Number (Optional)</label>
+                    <input type="number" name="phone" class="form-control" />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12">
+                    <br/>
+                    <label>Comments</label>
+                    <textarea type="text" name="comment" class="form-control"> </textarea>
+                    </div>
+                     <div class="col-md-12">
+                    <br/>
+                    <label>Rate Caspers Lounge Sevice</label>
+                    <br/>
+                    <div class="rating">
+                        <span><input type="radio" name="rating" id="str5" value="5"><label for="str5"></label></span>
+                        <span><input type="radio" name="rating" id="str4" value="4"><label for="str4"></label></span>
+                        <span><input type="radio" name="rating" id="str3" value="3"><label for="str3"></label></span>
+                        <span><input type="radio" name="rating" id="str2" value="2"><label for="str2"></label></span>
+                        <span><input type="radio" name="rating" id="str1" value="1"><label for="str1"></label></span>
+                    </div>
+                    </div>
+                    <div class="col-md-12">
+                    <br/>
+                    <button type="text" name="comment" class="btn btn-warning"><i class="glyphicon glyphicon-ok"></i> Send</button>
+                    </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- div#main -->
+<div class="main-navbar main-navbar-fixed-top" id="main-navbar">
+    <div class="main-navbar-content">
+    	<h3 class="pull-right "><b>Feedback</b></h3>
+        <div class="icon left" id="toggle-sidebar">
+            <h3><i class="glyphicon glyphicon-align-justify pull-right"></i></h3>
+        </div>
+    </div>
+</div>
+<!-- div#main-navbar -->
+<div class="main-sidebar main-sidebar-left" id="main-sidebar">
+	<div>
+        <img src="img/feel.png" class="img-responsive" />
+    </div>
+    <div class="main-sidebar-wrapper" id="main-sidebar-wrapper" style="padding:0;margin:0;">
+        <nav class="navigation">
+            <ul>
+                <ul>
+                <li><a href="index.html"><i class="glyphicon glyphicon-cutlery pull-right"></i> FOOD MENU</a></li>
+                <li><a href="cart.html"><i class="glyphicon glyphicon-shopping-cart pull-right"></i> ORDER LIST</a></li>
+                <li><a href="pending.html"><i class="glyphicon glyphicon-glass pull-right"></i> PENDING</a></li>
+                <li><a href="feedback.html"><i class="glyphicon glyphicon-inbox pull-right"></i> FEEDBACK</a></li>
+            </ul>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jqueryui.js"></script>
+<script src="js/jquery.simple-sidebar.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $('#main-sidebar').simpleSidebar({
+            wrapper: '#main',
+            opener: '#toggle-sidebar',
+            animation: {
+                easing: 'easeOutQuint'
+            },
+            sidebar: {
+                align: 'left',
+                closingLinks: '.close-sb'
+            },
+            sbWrapper: {
+                display: false
+            }
+        });   
+		
+		$('.hid').click(function(e) {
+            $('#main-sidebar').toggle();
+        }); 
+    });
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+//  Check Radio-box
+    $(".rating input:radio").attr("checked", false);
+    $('.rating input').click(function () {
+        $(".rating span").removeClass('checked');
+        $(this).parent().addClass('checked');
+    });
+
+    $('input:radio').change(
+    function(){
+        var userRating = this.value;
+        //alert(userRating);
+    }); 
+});
+</script>
+</body>
+</html>
